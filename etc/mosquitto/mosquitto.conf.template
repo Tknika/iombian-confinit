@@ -1,0 +1,29 @@
+# Place your local configuration in /etc/mosquitto/conf.d/
+#
+# A full description of the configuration file is at
+# /usr/share/doc/mosquitto/examples/mosquitto.conf.example
+
+{{ if .Data.mosquitto.port }}
+port {{ .Data.mosquitto.port }}
+{{ else }}
+port 1883
+{{ end }}
+
+{{ if .Data.mosquitto.websockets }}
+listener 8000
+protocol websockets
+{{ end }}
+
+{{ if .Data.mosquitto.auth }}
+allow_anonymous false
+password_file /etc/mosquitto/passwd
+{{ end }}
+
+pid_file /var/run/mosquitto.pid
+
+persistence true
+persistence_location /var/lib/mosquitto/
+
+log_dest file /var/log/mosquitto/mosquitto.log
+
+include_dir /etc/mosquitto/conf.d

@@ -1,0 +1,74 @@
+system:
+  forceipv4: true
+  domain: 'local'
+  hostname: iombian
+  country: ES
+  timezone: 'Europe/Madrid'
+  lang: 'es_ES.UTF-8'
+
+user:
+  name: iompi
+  password: iompi
+  # email: your@email.com
+
+networking:
+  eth0:
+    profile: 'static'
+    ip: '192.168.0.10/24'
+  #  gw: '192.168.0.1'
+  #  dns: 
+  #    - '8.8.8.8'
+  #    - '8.8.4.4'
+  #eth1:
+  #  profile: 'dhcp'
+  wlan0:
+    profile: 'dhcp'
+    wlan:
+      ssid: ''
+      psk: ''
+
+sshd: false
+
+nodered:
+  port: 1880
+  auth: true
+
+mosquitto:
+  port: 1883
+  websockets: true
+  auth: true
+
+mqttclient:
+  port: 1888
+
+#mail:
+#  service: 'smtp.gmail.com'
+#  port: 587
+#  auth:
+#    account: 'gmailuser@gmail.com'
+#    password: 'blablabla'
+
+monit:
+  refresh: 10
+  port: 2812
+  alerts:
+    fs: '90% for 5 times within 15 cycles'
+    system:
+      load1: 6
+      load5: 4
+      mem: '98% for 10 cycles'
+      cpu: '95% for 10 cycles'
+      swap: '1%'
+    services:
+      sshd: true
+      mosquitto: true
+      nodered: true
+      mail: true
+      avahi: true
+
+avahi:
+  ifaces: wlan0
+  publish: true
+  browsedomains: []
+  publishdns:
+    - 8.8.8.8

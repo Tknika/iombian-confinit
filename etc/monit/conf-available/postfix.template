@@ -1,0 +1,14 @@
+{{ if .Data.monit.alerts.services.mail }}
+check process postfix with pidfile /var/spool/postfix/pid/master.pid
+   start program = "/etc/init.d/postfix start"
+   stop  program = "/etc/init.d/postfix stop"
+   if failed port 25 protocol smtp then restart
+   depends on postfix_rc
+   group mail
+   group system
+
+check file postfix_rc with path /etc/init.d/postfix
+   include /etc/monit/templates/rootbin
+   group mail
+   group system
+{{ end }}
