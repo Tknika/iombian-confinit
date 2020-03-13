@@ -15,7 +15,7 @@ Repository that contains the [`confinit`](https://github.com/jriguera/confinit) 
 
 ## Parameters.yml
 
-If your distro is using this project (such as [IoMBian](http://https//github.com/Tknika/iombian)), your device can be easily configured editing the `parameters.yml` file in `/boot/config`. This file can be accessed from any of the main operating systems (Windows, Linux, MacOS) and can be edited with a simple text editor.
+If your distro is using this project (such as [IoMBian](https://github.com/Tknika/iombian)), your device can be easily configured editing the `parameters.yml` file in `/boot/config`. This file can be accessed from any of the main operating systems (Windows, Linux, MacOS) and can be edited with a simple text editor.
 
 The file is divided in different sections:
 
