@@ -41,6 +41,9 @@ mosquitto:
 mqttclient:
   port: 1888
 
+samba:
+  enabled: true
+
 #mail:
 #  service: 'smtp.gmail.com'
 #  port: 587

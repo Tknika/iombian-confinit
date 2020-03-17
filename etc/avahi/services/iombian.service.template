@@ -31,5 +31,6 @@
     {{if .Data.nodered}}<txt-record>Node-RED={{if .Data.nodered.port}}{{.Data.nodered.port}}{{else}}1880{{end}}</txt-record>{{end}}
     {{if .Data.mqttclient}}<txt-record>MQTT-client={{if .Data.mqttclient.port}}{{.Data.mqttclient.port}}{{else}}1888{{end}}</txt-record>{{end}}
     {{if .Data.monit}}<txt-record>Monit={{if .Data.monit.port}}{{.Data.monit.port}}{{else}}2812{{end}}</txt-record>{{end}}
+    {{if .Data.samba.enabled}}<txt-record>Samba={{if .Data.samba.port}}{{.Data.samba.port}}{{else}}445{{end}}</txt-record>{{end}}
   </service>
 </service-group>
