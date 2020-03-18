@@ -5,7 +5,7 @@
 SSHD_OPTS=
 
 # Enable at startup
-{{ if .Data.sshd }}
+{{ if .Data.sshd.enabled }}
 SSHD_ENABLED=1
 {{ else }}
 SSHD_ENABLED=0

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-{{ if .Data.sshd }}
+{{ if .Data.sshd.enabled }}
   if ! (/usr/bin/systemctl -q is-active ssh.service) then
     /usr/bin/systemctl enable ssh
     /usr/bin/systemctl start ssh

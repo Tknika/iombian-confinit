@@ -76,10 +76,11 @@ Finally, the `wlan` section of your wireless interface (wlan0) allows you to set
 #### SSH
 
 ```yaml
-sshd: false
+sshd: 
+  enabled: false
 ```
 
-Set the `sshd` parameter to `true` if you want to enable the SSH server.
+Set the `enabled` parameter to `true` if you want to enable the SSH server.
 
 
 #### Node-RED

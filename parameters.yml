@@ -27,7 +27,8 @@ networking:
       ssid: ''
       psk: ''
 
-sshd: false
+sshd: 
+  enabled: false
 
 nodered:
   port: 1880

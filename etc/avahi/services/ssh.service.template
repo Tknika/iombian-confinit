@@ -1,4 +1,4 @@
-{{ if .Data.sshd }}<?xml version="1.0" standalone='no'?><!--*-nxml-*-->
+{{ if .Data.sshd.enabled }}<?xml version="1.0" standalone='no'?><!--*-nxml-*-->
 <!DOCTYPE service-group SYSTEM "avahi-service.dtd">
 
 <!--

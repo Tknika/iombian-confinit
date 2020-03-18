@@ -18,7 +18,7 @@ echo "done"
 {{ end }}
 
 # SSH
-{{ if .Data.sshd }}
+{{ if .Data.sshd.enabled }}
 echo -n "* Enable SSH daemon ... "
 pushd /etc/monit/conf-enabled >/dev/null
     ln -sf ../conf-available/openssh-server
