@@ -9,23 +9,26 @@ system:
 user:
   name: iompi
   password: iompi
-  # email: your@email.com
+  #email: your@email.com
 
 networking:
   eth0:
     profile: 'static'
     ip: '192.168.0.10/24'
-  #  gw: '192.168.0.1'
-  #  dns: 
-  #    - '8.8.8.8'
-  #    - '8.8.4.4'
+    #gw: '192.168.0.1'
+    #dns: 
+      #- '8.8.8.8'
+      #- '8.8.4.4'
   #eth1:
-  #  profile: 'dhcp'
+    #profile: 'dhcp'
   wlan0:
     profile: 'dhcp'
     wlan:
       ssid: ''
       psk: ''
+    #wlan2:
+      #ssid: ''
+      #psk: ''
 
 sshd: 
   enabled: false
@@ -46,11 +49,11 @@ samba:
   enabled: true
 
 #mail:
-#  service: 'smtp.gmail.com'
-#  port: 587
-#  auth:
-#    account: 'gmailuser@gmail.com'
-#    password: 'blablabla'
+  #service: 'smtp.gmail.com'
+  #port: 587
+  #auth:
+    #account: 'gmailuser@gmail.com'
+    #password: 'blablabla'
 
 monit:
   refresh: 10
