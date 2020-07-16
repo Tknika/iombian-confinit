@@ -72,6 +72,8 @@ In this section you can define the network configuration of your device. For eac
 
 Finally, the `wlan` section of your wireless interface (wlan0) allows you to set the name (`ssid`) and password (`psk`) of the network you want your device to connect to.
 
+> Warning: if you want to connect to an open WiFi network, you have to replace the `psk` parameter with: ```key_mgmt: NONE```
+
 
 #### SSH
 
