@@ -30,6 +30,9 @@ networking:
       #ssid: ''
       #psk: ''
 
+display:
+  enabled: false
+
 sshd: 
   enabled: false
 

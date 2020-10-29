@@ -7,6 +7,7 @@ Repository that contains the [`confinit`](https://github.com/jriguera/confinit) 
 - Locale
 - Timezone
 - Network (wireless settings and configuration for each interface)
+- Display
 - Node-RED
 - Mosquitto
 - Hivemq mqtt web client (browser MQTT client)
@@ -77,6 +78,14 @@ Finally, the `wlan` section of your wireless interface (wlan0) allows you to set
 
 > Warning: if you want to connect to an open WiFi network, you have to replace the `psk` parameter with: ```key_mgmt: NONE```
 
+#### Display
+
+```yaml
+display: 
+  enabled: false
+```
+
+Set the `enabled` parameter to `true` if your device has a TFT display.
 
 #### SSH
 
