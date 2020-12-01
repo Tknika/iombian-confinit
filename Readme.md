@@ -2,17 +2,17 @@
 
 Repository that contains the [`confinit`](https://github.com/jriguera/confinit) configuration used in the IoMBian project. The setup handles the following packages:
 
-- 'iompi' user's password (the username cannot be changed)
-- Hostname
-- Locale
-- Timezone
-- Network (wireless settings and configuration for each interface)
-- Display
-- Node-RED
-- Mosquitto
-- Hivemq mqtt web client (browser MQTT client)
-- Monit
-- Postfix
+- ['iompi' user's password (the username cannot be changed)](#User)
+- [Hostname](#System)
+- [Locale](#System)
+- [Timezone](#System)
+- [Network (wireles settings and configuration for each interface)](#Networking)
+- [Display](#Display)
+- [Node-RED](#Node-RED)
+- [Mosquitto](#Mosquitto)
+- [Hivemq mqtt web client (browser MQTT client)](#MQTT-Client)
+- [Monit](#Monit)
+- [Postfix](#Mail)
 
 
 ## Parameters.yml
