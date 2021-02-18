@@ -94,12 +94,23 @@ network={
     {{ else -}}{{ $par }}={{ $value -}}
     {{ end -}}
     {{ end }}
-    priority=2
+    priority=3
 }
 {{ end }}
 {{ if $params.wlan2 }}
 network={
     {{ range $par, $value := $params.wlan2 }}
+    {{ if eq $par "ssid" -}}{{ $par }}="{{ $value -}}"
+    {{ else if eq $par "psk" -}}{{ $par }}="{{ $value -}}"
+    {{ else -}}{{ $par }}={{ $value -}}
+    {{ end -}}
+    {{ end }}
+    priority=2
+}
+{{ end }}
+{{ if $params.wlan3 }}
+network={
+    {{ range $par, $value := $params.wlan3 }}
     {{ if eq $par "ssid" -}}{{ $par }}="{{ $value -}}"
     {{ else if eq $par "psk" -}}{{ $par }}="{{ $value -}}"
     {{ else -}}{{ $par }}={{ $value -}}
