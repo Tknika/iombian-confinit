@@ -82,3 +82,5 @@ avahi:
   browsedomains: []
   publishdns:
     - 8.8.8.8
+
+config_date: ''
