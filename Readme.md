@@ -193,7 +193,18 @@ avahi:
     - 8.8.8.8
 ```
 
-The last section sets the configuration of the Avahi program, that allows discovering IoMBian devices in your local network with a tool called [IoMBian Discover](https://github.com/Tknika/iombian-discover). The most important configuration parameter is the so-called `ifaces`, which defines the network interface (eth0, eth1, wlan0,...) used to connect to the IT network.
+The Avahi section sets the configuration of the Avahi program, that allows discovering IoMBian devices in your local network with a tool called [IoMBian Discover](https://github.com/Tknika/iombian-discover).
+The most important configuration parameter is the so-called `ifaces`, which defines the network interface (eth0, eth1, wlan0,...) used to connect to the IT network.
+
+
+#### Config Date
+
+```yaml
+config_date: ''
+```
+
+Finally, `config_date` defines the date on which the configuration was defined.
+The device uses this parameter to know if it is already configured.
 
 
 ## Credits
