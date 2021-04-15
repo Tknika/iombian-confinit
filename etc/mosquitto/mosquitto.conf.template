@@ -4,9 +4,9 @@
 # /usr/share/doc/mosquitto/examples/mosquitto.conf.example
 
 {{ if .Data.mosquitto.port }}
-port {{ .Data.mosquitto.port }}
+listener {{ .Data.mosquitto.port }}
 {{ else }}
-port 1883
+listener 1883
 {{ end }}
 
 {{ if .Data.mosquitto.websockets }}
@@ -17,9 +17,11 @@ protocol websockets
 {{ if .Data.mosquitto.auth }}
 allow_anonymous false
 password_file /etc/mosquitto/passwd
+{{ else }}
+allow_anonymous true
 {{ end }}
 
-pid_file /var/run/mosquitto.pid
+pid_file /var/run/mosquitto/mosquitto.pid
 
 persistence true
 persistence_location /var/lib/mosquitto/
