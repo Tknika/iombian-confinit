@@ -51,6 +51,10 @@ mqttclient:
 samba:
   enabled: true
 
+wetty:
+  enabled: true
+  port: 3000
+
 #mail:
   #service: 'smtp.gmail.com'
   #port: 587

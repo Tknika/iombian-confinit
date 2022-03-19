@@ -8,9 +8,12 @@ Repository that contains the [`confinit`](https://github.com/jriguera/confinit) 
 - [Timezone](#System)
 - [Network (wireles settings and configuration for each interface)](#Networking)
 - [Display](#Display)
+- [SSH](#SSH)
 - [Node-RED](#Node-RED)
 - [Mosquitto](#Mosquitto)
 - [Hivemq mqtt web client (browser MQTT client)](#MQTT-Client)
+- [Samba](#Samba)
+- [WeTTY](#WeTTY)
 - [Monit](#Monit)
 - [Postfix](#Mail)
 
@@ -78,7 +81,7 @@ Finally, the `wlan` section of your wireless interface (wlan0) allows you to set
 
 > Warning: if you want to connect to an open WiFi network, you have to replace the `psk` parameter with: ```key_mgmt: NONE```
 
-#### Display
+### Display
 
 ```yaml
 display: 
@@ -87,7 +90,7 @@ display:
 
 Set the `enabled` parameter to `true` if your device has a TFT display.
 
-#### SSH
+### SSH
 
 ```yaml
 sshd: 
@@ -97,7 +100,7 @@ sshd:
 Set the `enabled` parameter to `true` if you want to enable the SSH server.
 
 
-#### Node-RED
+### Node-RED
 
 ```yaml
 nodered:
@@ -108,7 +111,7 @@ nodered:
 You can change Node-RED's port number through the `port` parameter. At the same time, setting the `auth` parameter to true will enable the basic username and password authentication system. The username and the password will be the same as the ones defined in the [user](#user) section.
 
 
-#### Mosquitto
+### Mosquitto
 
 ```yaml
 mosquitto:
@@ -120,7 +123,7 @@ mosquitto:
 The `port` parameter defines the port on which mosquitto (the MQTT broker) will be listening to new connections. The `websockets` parameter activates the websocket server (port 8000) and `auth`, as in [Node-RED](#node-red), enables the authentication system of the broker.
 
 
-#### MQTT client
+### MQTT client
 
 ```yaml
 mqttclient:
@@ -130,7 +133,7 @@ mqttclient:
 1888 is the port in which the MQTT web client is available, but this can be controlled changing the `port` parameter.
 
 
-#### Samba
+### Samba
 
 ```yaml
 samba:
@@ -140,7 +143,18 @@ samba:
 By default, the `/data` folder of the device is shared using the [Samba](https://en.wikipedia.org/wiki/Samba_(software)) protocol. The connection is protected using the same credentials defined in the [user](#user) section. This service can be disabled setting the `enabled` parameter to `false`.
 
 
-#### Mail
+### WeTTY
+
+```yaml
+wetty:
+  enabled: true
+  port: 3000
+```
+
+[WeTTY](https://github.com/butlerx/wetty) is a web based application that allows to open a terminal over HTTP. The service can be enabled or disabled through the `enabled` parameter and the listening port can also be changed using the `port` parameter. 
+
+
+### Mail
 
 ```yaml
 mail:
@@ -157,7 +171,7 @@ The mail section allows changing the configuration of [Postfix](http://www.postf
 - https://support.google.com/accounts/answer/185833 (If your account has 2-Step-Verification enabled)
 
 
-#### Monit
+### Monit
 
 ```yaml
 monit:
@@ -182,7 +196,7 @@ monit:
 This section defines the configuration of [Monit](https://mmonit.com/monit/), the system monitoring tool preinstalled on IoMBian. The default values are valid for most systems, but the `alerts` parameters allow you to customize your configuration. The `refresh` parameters specifies how often the program checks the system 'health' and the `port` parameter defines on which port the program's web administration panel is. Monit always requires you to provide a username and password to access its web panel, and those are the ones used in the [User](#user) section. 
 
 
-#### Avahi
+### Avahi
 
 ```yaml
 avahi:
@@ -197,7 +211,7 @@ The Avahi section sets the configuration of the Avahi program, that allows disco
 The most important configuration parameter is the so-called `ifaces`, which defines the network interface (eth0, eth1, wlan0,...) used to connect to the IT network.
 
 
-#### Config Date
+### Config Date
 
 ```yaml
 config_date: ''
@@ -214,7 +228,7 @@ The device uses this parameter to know if it is already configured.
 
 ## Author
 
-(c) 2021 [Tknika](https://tknika.eus/) ([Aitor Iturrioz](https://github.com/bodiroga))
+(c) 2022 [Tknika](https://tknika.eus/) ([Aitor Iturrioz](https://github.com/bodiroga))
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
