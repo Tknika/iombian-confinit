@@ -28,11 +28,11 @@
     <type>_iombian._tcp</type>
     {{if .Data.system.domain}}<domain-name>{{.Data.system.domain}}</domain-name>{{end}}
     {{if .Data.system.hostname}}<host-name>{{.Data.system.hostname}}{{if .Data.system.domain}}.{{.Data.system.domain}}{{end}}</host-name>{{end}}
-    {{if .Data.nodered}}<txt-record>Node-RED={"type": "web", "port": {{if .Data.nodered.port}}"{{.Data.nodered.port}}"{{else}}"1880"{{end}}}</txt-record>{{end}}
-    {{if .Data.mqttclient}}<txt-record>MQTT-client={"type": "web", "port": {{if .Data.mqttclient.port}}"{{.Data.mqttclient.port}}"{{else}}"1888"{{end}}}</txt-record>{{end}}
-    {{if .Data.monit}}<txt-record>Monit={"type": "web", "port": {{if .Data.monit.port}}"{{.Data.monit.port}}"{{else}}"2812"{{end}}}</txt-record>{{end}}
-    {{if .Data.samba.enabled}}<txt-record>Samba={"type": "smb", "port": {{if .Data.samba.port}}"{{.Data.samba.port}}"{{else}}"445"{{end}}}</txt-record>{{end}}
-    {{if .Data.sshd.enabled}}<txt-record>SSH={"type": "ssh", "port": {{if .Data.sshd.port}}"{{.Data.sshd.port}}"{{else}}"22"{{end}}, "user": "{{.Data.user.name}}"}</txt-record>{{end}}
-    {{if .Data.wetty.enabled}}<txt-record>WeTTY={"type": "web", "port": {{if .Data.wetty.port}}"{{.Data.wetty.port}}"{{else}}"3000"{{end}}}</txt-record>{{end}}
+    {{if .Data.nodered}}<txt-record>Node-RED={"name": "Node-RED", "type": "web", "port": {{if .Data.nodered.port}}"{{.Data.nodered.port}}"{{else}}"1880"{{end}}}</txt-record>{{end}}
+    {{if .Data.mqttclient}}<txt-record>MQTT-client={"name": "MQTT Client", "type": "web", "port": {{if .Data.mqttclient.port}}"{{.Data.mqttclient.port}}"{{else}}"1888"{{end}}}</txt-record>{{end}}
+    {{if .Data.monit}}<txt-record>Monit={"name": "Monit", "type": "web", "port": {{if .Data.monit.port}}"{{.Data.monit.port}}"{{else}}"2812"{{end}}}</txt-record>{{end}}
+    {{if .Data.samba.enabled}}<txt-record>Samba={"name": "Samba", "type": "smb", "port": {{if .Data.samba.port}}"{{.Data.samba.port}}"{{else}}"445"{{end}}}</txt-record>{{end}}
+    {{if .Data.sshd.enabled}}<txt-record>SSH={"name": "SSH", "type": "ssh", "port": {{if .Data.sshd.port}}"{{.Data.sshd.port}}"{{else}}"22"{{end}}, "user": "{{.Data.user.name}}"}</txt-record>{{end}}
+    {{if .Data.wetty.enabled}}<txt-record>WeTTY={"name": "WeTTY", "type": "web", "port": {{if .Data.wetty.port}}"{{.Data.wetty.port}}"{{else}}"3000"{{end}}}</txt-record>{{end}}
   </service>
 </service-group>
