@@ -1,0 +1,17 @@
+logoutput: split
+loglevel: debug
+datafile: /boot/config/parameters.yml
+
+process:
+
+- source: /boot/config/scripts/intermediate
+  operations:
+  - destination: /tmp/confinit
+    template: true
+    delextension: false
+    default:
+      mode:
+        file: "0755"
+    command:
+      cmd: ["{{.Destination}}"]
+
