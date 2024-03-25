@@ -1,2 +1,0 @@
-websocketserver = '{{ if .Data.system.hostname }}{{ .Data.system.hostname }}.{{ if .Data.system.domain }}{{ .Data.system.domain}}{{ else }}local{{ end }}{{ else }}localhost{{ end }}';
-websocketport = 8000;

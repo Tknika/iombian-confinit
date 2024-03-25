@@ -1,1 +1,0 @@
-{{ if .Data.mail }}[{{ .Data.mail.service }}]:{{ .Data.mail.port }}    {{ .Data.mail.auth.account }}:{{ .Data.mail.auth.password }}{{ end }}

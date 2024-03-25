@@ -1,1 +1,0 @@
-{{ if .Data.mosquitto.auth }}{{ .Data.user.name }}:{{ .Data.user.password }}{{ end }}
