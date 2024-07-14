@@ -23,17 +23,7 @@ process:
     - mode: "0700"
       glob: '*monitrc'
 
-- source: /boot/config/opt
-  operations:
-  - destination: /opt
-    regex: '.*\.template'
-
-- source: /boot/config/home
-  operations:
-  - destination: /home/iompi
-    regex: '.*\.template'
-
-# Execute thse scripts during boot
+# Execute these scripts during boot
 - source: /boot/config/scripts/boot
   operations:
   - destination: /tmp/confinit
